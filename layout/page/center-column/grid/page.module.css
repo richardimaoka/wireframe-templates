@@ -1,0 +1,19 @@
+.container {
+  min-height: 100vh;
+
+  display: grid;
+  /**
+   * 書籍「作って学ぶ HTML+CSSグリッドレイアウト」より、p.267 Chapter 5.12 パンケーキ・スタック・レイアウト　より
+   * 列の横幅は auto ではなくminmax(0, auto) と指定しています。サンプルのコンテンツでは問題ありませんが、<pre>などが
+   * 含まれたときに P.270のように画面からオーバーフローしてレイアウトが崩れるのを防ぎます。
+   */
+  grid-template-columns: minmax(0, auto);
+}
+
+.center {
+  height: 100%;
+
+  justify-self: center;
+  width: 100%;
+  max-width: 780px;
+}
