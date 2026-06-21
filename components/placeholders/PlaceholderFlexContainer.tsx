@@ -20,6 +20,13 @@ type Props = {
   FlexProps &
   GridItemProps;
 
+/**
+ * Flexbox layout container for wireframes.
+ *
+ * Agent guidance: prefer PlaceholderGridContainer for page and section layouts.
+ * Use PlaceholderFlexContainer only when flex-specific behavior is required
+ * (e.g. flexDirection, flexGrow, flexWrap, or a single-axis row/column flow).
+ */
 export function PlaceholderFlexContainer(props: Props) {
   const defaultBgColor = "transparent";
   const backgroundColor = props.backgroundColor
