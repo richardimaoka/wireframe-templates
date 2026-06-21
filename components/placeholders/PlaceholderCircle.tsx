@@ -4,15 +4,15 @@ import { BgColor, BorderProps, GridItemProps } from "./placeholder-types";
 
 type Props = {
   radius: number;
-  bgColor?: BgColor;
+  backgroundColor?: BgColor;
   className?: string;
 } & BorderProps &
   GridItemProps;
 
 export function PlaceholderCircle(props: Props) {
   const defaultBgColor = "gray-400";
-  const bgColor = props.bgColor
-    ? toCssColor(props.bgColor)
+  const backgroundColor = props.backgroundColor
+    ? toCssColor(props.backgroundColor)
     : toCssColor(defaultBgColor);
 
   const defaultBorderColor = "transparent";
@@ -51,7 +51,7 @@ export function PlaceholderCircle(props: Props) {
         height: props.radius,
         borderRadius: "50%",
         // background settings
-        backgroundColor: bgColor,
+        backgroundColor: backgroundColor,
         // border settings
         ...borderProps,
       }}

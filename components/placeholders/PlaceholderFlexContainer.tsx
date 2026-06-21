@@ -11,7 +11,7 @@ import {
 type Props = {
   height?: React.CSSProperties["height"];
   width?: React.CSSProperties["width"];
-  bgColor?: BgColor;
+  backgroundColor?: BgColor;
   children?: React.ReactNode;
   className?: string;
 } & PaddingProps &
@@ -21,8 +21,8 @@ type Props = {
 
 export function PlaceholderFlexContainer(props: Props) {
   const defaultBgColor = "transparent";
-  const bgColor = props.bgColor
-    ? toCssColor(props.bgColor)
+  const backgroundColor = props.backgroundColor
+    ? toCssColor(props.backgroundColor)
     : toCssColor(defaultBgColor);
 
   const defaultBorderColor = "transparent";
@@ -69,7 +69,7 @@ export function PlaceholderFlexContainer(props: Props) {
         height: props.height,
         width: props.width,
         // background settings
-        backgroundColor: bgColor,
+        backgroundColor: backgroundColor,
         // padding settings
         ...paddingProps,
         // border settings

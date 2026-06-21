@@ -4,15 +4,15 @@ import { BgColor, BorderProps, GridItemProps } from "./placeholder-types";
 
 type Props = {
   sideLength: number;
-  bgColor?: BgColor;
+  backgroundColor?: BgColor;
   className?: string;
 } & BorderProps &
   GridItemProps;
 
 export function PlaceholderSquare(props: Props) {
   const defaultBgColor = "gray-400";
-  const bgColor = props.bgColor
-    ? toCssColor(props.bgColor)
+  const backgroundColor = props.backgroundColor
+    ? toCssColor(props.backgroundColor)
     : toCssColor(defaultBgColor);
 
   const defaultBorderColor = "transparent";
@@ -50,7 +50,7 @@ export function PlaceholderSquare(props: Props) {
         width: props.sideLength,
         height: props.sideLength,
         // background settings
-        backgroundColor: bgColor,
+        backgroundColor: backgroundColor,
         // border settings
         ...borderProps,
       }}
