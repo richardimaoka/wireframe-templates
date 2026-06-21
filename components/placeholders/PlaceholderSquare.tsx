@@ -55,7 +55,9 @@ export function PlaceholderSquare(props: Props) {
         // border settings
         ...borderProps,
       }}
-      className={[styles.root, props.className].filter(Boolean).join(" ")}
+      className={[styles.grayColors, props.className]
+        .filter(Boolean) // omit falsy values (e.g. undefined className)
+        .join(" ")}
     ></div>
   );
 }

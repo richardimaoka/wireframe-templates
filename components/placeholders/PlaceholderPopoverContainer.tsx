@@ -47,7 +47,9 @@ export function PlaceholderPopoverContainer(props: Props) {
         // anchor positioning
         ...anchorLayoutProps,
       }}
-      className={[styles.root, props.className].filter(Boolean).join(" ")}
+      className={[styles.grayColors, props.className]
+        .filter(Boolean) // omit falsy values (e.g. undefined className)
+        .join(" ")}
     >
       {props.children}
     </div>

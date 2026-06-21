@@ -19,7 +19,9 @@ export function PlaceholderPosition(props: Props) {
         left: props.left,
         zIndex: props.zIndex,
       }}
-      className={[styles.root, props.className].filter(Boolean).join(" ")}
+      className={[styles.grayColors, props.className]
+        .filter(Boolean) // omit falsy values (e.g. undefined className)
+        .join(" ")}
     >
       {props.children}
     </div>

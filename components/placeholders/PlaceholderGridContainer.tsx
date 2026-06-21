@@ -96,7 +96,9 @@ export function PlaceholderGridContainer(props: Props) {
         // grid settings
         ...gridProps,
       }}
-      className={[styles.root, props.className].filter(Boolean).join(" ")}
+      className={[styles.grayColors, props.className]
+        .filter(Boolean) // omit falsy values (e.g. undefined className)
+        .join(" ")}
     >
       {props.children}
     </div>
