@@ -1,6 +1,5 @@
 import React, { CSSProperties } from "react";
 import { toCssColor } from "./placeholder-funcs";
-import styles from "./placeholder.module.css";
 import {
   BgColor,
   BorderProps,
@@ -8,6 +7,7 @@ import {
   GridProps,
   PaddingProps,
 } from "./placeholder-types";
+import styles from "./placeholder.module.css";
 
 type Props = {
   height?: React.CSSProperties["height"];
@@ -21,7 +21,7 @@ type Props = {
   GridItemProps;
 
 export function PlaceholderGridContainer(props: Props) {
-  const defaultBgColor = "gray-400";
+  const defaultBgColor = "transparent";
   const backgroundColor = props.backgroundColor
     ? toCssColor(props.backgroundColor)
     : toCssColor(defaultBgColor);
