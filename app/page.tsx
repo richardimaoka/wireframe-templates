@@ -1,3 +1,12 @@
+import { PlaceholderCircle } from "@/components/placeholders/PlaceholderCircle";
+
 export default function Home() {
-  return <div style={{ backgroundColor: "var(--color-gray-100)" }}>aaa</div>;
+  return (
+    <PlaceholderCircle
+      radius={100}
+      backgroundColor="gray-400"
+      borderColor="transparent"
+      borderWidth={1}
+    />
+  );
 }

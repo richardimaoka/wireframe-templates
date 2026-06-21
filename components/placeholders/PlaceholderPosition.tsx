@@ -1,5 +1,6 @@
 import React from "react";
 import { PositionProps } from "./placeholder-types";
+import styles from "./placeholder.module.css";
 
 type Props = {
   children?: React.ReactNode;
@@ -18,7 +19,7 @@ export function PlaceholderPosition(props: Props) {
         left: props.left,
         zIndex: props.zIndex,
       }}
-      className={props.className}
+      className={[styles.root, props.className].filter(Boolean).join(" ")}
     >
       {props.children}
     </div>

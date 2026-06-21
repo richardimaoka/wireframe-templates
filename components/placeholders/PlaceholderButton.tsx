@@ -1,5 +1,6 @@
 import React, { type CSSProperties } from "react";
 import { toCssColor } from "./placeholder-funcs";
+import styles from "./placeholder.module.css";
 import {
   BgColor,
   BorderProps,
@@ -108,7 +109,7 @@ export function PlaceholderButton(props: Props) {
           ? ({ anchorName: props.anchorName } as CSSProperties)
           : {}),
       }}
-      className={props.className}
+      className={[styles.root, props.className].filter(Boolean).join(" ")}
     >
       {props.children}
     </button>

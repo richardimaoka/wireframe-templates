@@ -1,5 +1,6 @@
 import React, { type CSSProperties } from "react";
 import type { AnchorInset } from "./placeholder-types";
+import styles from "./placeholder.module.css";
 
 type Props = {
   id: string;
@@ -46,7 +47,7 @@ export function PlaceholderPopoverContainer(props: Props) {
         // anchor positioning
         ...anchorLayoutProps,
       }}
-      className={props.className}
+      className={[styles.root, props.className].filter(Boolean).join(" ")}
     >
       {props.children}
     </div>

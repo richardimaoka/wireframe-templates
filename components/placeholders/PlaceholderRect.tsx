@@ -1,5 +1,6 @@
 import React, { type CSSProperties } from "react";
 import { toCssColor } from "./placeholder-funcs";
+import styles from "./placeholder.module.css";
 import { BgColor, BorderProps, GridItemProps } from "./placeholder-types";
 
 type Props = {
@@ -55,7 +56,7 @@ export function PlaceholderRect(props: Props) {
         // border settings
         ...borderProps,
       }}
-      className={props.className}
+      className={[styles.root, props.className].filter(Boolean).join(" ")}
     ></div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { CSSProperties } from "react";
 import { toCssColor } from "./placeholder-funcs";
+import styles from "./placeholder.module.css";
 import {
   BgColor,
   BorderProps,
@@ -95,7 +96,7 @@ export function PlaceholderGridContainer(props: Props) {
         // grid settings
         ...gridProps,
       }}
-      className={props.className}
+      className={[styles.root, props.className].filter(Boolean).join(" ")}
     >
       {props.children}
     </div>
