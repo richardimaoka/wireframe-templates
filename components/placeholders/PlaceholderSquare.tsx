@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { extractColor } from "./placeholder-funcs";
+import { toCssColor } from "./placeholder-funcs";
 import { BgColor, BorderProps, GridItemProps } from "./placeholder-types";
 
 type Props = {
@@ -10,8 +10,15 @@ type Props = {
   GridItemProps;
 
 export function PlaceholderSquare(props: Props) {
-  const bgColor = extractColor(props.bgColor, "var(--color-gray-100)");
-  const borderColor = extractColor(props.borderColor);
+  const defaultBgColor = "gray-400";
+  const bgColor = props.bgColor
+    ? toCssColor(props.bgColor)
+    : toCssColor(defaultBgColor);
+
+  const defaultBorderColor = "transparent";
+  const borderColor = props.borderColor
+    ? toCssColor(props.borderColor)
+    : toCssColor(defaultBorderColor);
 
   const hasBorder =
     props.borderWidth ||

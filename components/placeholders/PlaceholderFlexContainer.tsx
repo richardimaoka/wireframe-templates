@@ -1,5 +1,5 @@
 import React, { type CSSProperties } from "react";
-import { extractColor } from "./placeholder-funcs";
+import { toCssColor } from "./placeholder-funcs";
 import {
   BgColor,
   BorderProps,
@@ -20,8 +20,15 @@ type Props = {
   GridItemProps;
 
 export function PlaceholderFlexContainer(props: Props) {
-  const bgColor = extractColor(props.bgColor, "var(--color-gray-100)");
-  const borderColor = extractColor(props.borderColor);
+  const defaultBgColor = "transparent";
+  const bgColor = props.bgColor
+    ? toCssColor(props.bgColor)
+    : toCssColor(defaultBgColor);
+
+  const defaultBorderColor = "transparent";
+  const borderColor = props.borderColor
+    ? toCssColor(props.borderColor)
+    : toCssColor(defaultBorderColor);
 
   const paddingProps = props.padding
     ? { padding: props.padding }
